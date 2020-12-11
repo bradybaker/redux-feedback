@@ -1,6 +1,6 @@
-import React, { Components } from 'react'
+import React, { Component } from 'react'
 
-class Supported extends Components {
+class Supported extends Component {
     render() {
         return (
             <div>

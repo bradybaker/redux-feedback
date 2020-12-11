@@ -1,6 +1,6 @@
-import React, { Components } from 'react'
+import React, { Component } from 'react'
 
-class Comments extends Components {
+class Comments extends Component {
     render() {
         return (
             <div>
