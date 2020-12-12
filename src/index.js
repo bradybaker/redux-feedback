@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 const nameReducer = (state = {}, action) => {
     if (action.type === 'NAME') {
         return action.payload
+    } else if (action.type === 'CLEAR') {
+        return state = {}
     }
     return state
 }
@@ -17,6 +19,8 @@ const nameReducer = (state = {}, action) => {
 const feelingReducer = (state = {}, action) => {
     if (action.type === 'FEELING') {
         return action.payload
+    } else if (action.type === 'CLEAR') {
+        return state = {}
     }
     return state
 }
@@ -24,6 +28,8 @@ const feelingReducer = (state = {}, action) => {
 const understandingReducer = (state = {}, action) => {
     if (action.type === 'UNDERSTANDING') {
         return action.payload
+    } else if (action.type === 'CLEAR') {
+        return state = {}
     }
     return state
 }
@@ -31,6 +37,8 @@ const understandingReducer = (state = {}, action) => {
 const supportReducer = (state = {}, action) => {
     if (action.type === 'SUPPORT') {
         return action.payload
+    } else if (action.type === 'CLEAR') {
+        return state = {}
     }
     return state
 }
@@ -38,6 +46,8 @@ const supportReducer = (state = {}, action) => {
 const commentReducer = (state = {}, action) => {
     if (action.type === 'COMMENT') {
         return action.payload
+    } else if (action.type === 'CLEAR') {
+        return state = {}
     }
     return state
 }
