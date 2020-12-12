@@ -8,6 +8,7 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
 import Home from '../Home/Home'
+import Admin from '../Admin/Admin'
 
 class App extends Component {
   render() {
@@ -38,6 +39,9 @@ class App extends Component {
           </Route>
           <Route path='/thankyou'>
             <ThankYou />
+          </Route>
+          <Route path='/admin'>
+            <Admin />
           </Route>
         </Router>
         <br />

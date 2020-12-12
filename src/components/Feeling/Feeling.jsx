@@ -35,6 +35,10 @@ class Feeling extends Component {
         });
     }
 
+    goBack = () => {
+        this.props.history.push('/')
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -60,7 +64,7 @@ class Feeling extends Component {
                     </FormControl>
                     <button type='submit'>Next</button>
                 </form>
-
+                <button onClick={this.goBack}>Back</button>
             </div>
         )
     }
