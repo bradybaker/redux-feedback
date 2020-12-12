@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
 
 const styles = theme => ({
     textField: {
@@ -25,6 +26,7 @@ class Comments extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.dispatch({ type: 'COMMENT', payload: this.state })
         this.props.history.push('/review')
     }
 
@@ -65,4 +67,4 @@ class Comments extends Component {
     }
 }
 
-export default withRouter(withStyles(styles)(Comments));
+export default withRouter(withStyles(styles)(connect()(Comments)));

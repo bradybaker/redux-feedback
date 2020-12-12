@@ -6,6 +6,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
+
 
 const styles = theme => ({
     formControl: {
@@ -26,6 +28,7 @@ class Supported extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.dispatch({ type: 'SUPPORT', payload: this.state })
         this.props.history.push('/comments')
     }
 
@@ -71,4 +74,4 @@ class Supported extends Component {
     }
 }
 
-export default withRouter(withStyles(styles)(Supported));
+export default withRouter(withStyles(styles)(connect()(Supported)));
