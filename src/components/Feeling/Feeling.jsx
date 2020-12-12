@@ -47,13 +47,13 @@ class Feeling extends Component {
                             name="Feeling"
                             className={classes.group}
                             value={this.state.feeling}
-                            onChange={(event) => this.handleChange(event, 'method')}
+                            onChange={this.handleChange}
                         >
-                            <FormControlLabel value="1" control={<Radio />} label="1" />
-                            <FormControlLabel value="2" control={<Radio />} label="2" />
-                            <FormControlLabel value="3" control={<Radio />} label="3" />
-                            <FormControlLabel value="4" control={<Radio />} label="4" />
-                            <FormControlLabel value="5" control={<Radio />} label="5" />
+                            <FormControlLabel value="1" control={<Radio required />} label="1" />
+                            <FormControlLabel value="2" control={<Radio required />} label="2" />
+                            <FormControlLabel value="3" control={<Radio required />} label="3" />
+                            <FormControlLabel value="4" control={<Radio required />} label="4" />
+                            <FormControlLabel value="5" control={<Radio required />} label="5" />
                         </RadioGroup>
                     </FormControl>
                     <button type='submit'>Next</button>
