@@ -7,6 +7,13 @@ import logger from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+const nameReducer = (state = {}, action) => {
+    if (action.type === 'NAME') {
+        return action.payload
+    }
+    return state
+}
+
 const feelingReducer = (state = {}, action) => {
     if (action.type === 'FEELING') {
         return action.payload
@@ -37,6 +44,7 @@ const commentReducer = (state = {}, action) => {
 
 const storeInstance = createStore(
     combineReducers({
+        nameReducer,
         feelingReducer,
         understandingReducer,
         supportReducer,

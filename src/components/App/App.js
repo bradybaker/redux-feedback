@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling'
@@ -8,6 +7,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
+import Home from '../Home/Home'
 
 class App extends Component {
   render() {
@@ -19,6 +19,9 @@ class App extends Component {
         </header>
         <Router>
           <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/feeling'>
             <Feeling />
           </Route>
           <Route path='/understanding'>

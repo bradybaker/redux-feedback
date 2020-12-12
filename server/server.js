@@ -5,11 +5,12 @@ const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(bodyParser.json()); // needed for angular requests
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-
+const responseRouter = require('./routes/response.router');
+app.use('/api/response', responseRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
