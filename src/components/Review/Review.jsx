@@ -13,6 +13,10 @@ class Review extends Component {
             <div>
                 <h1>Review Responses</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <p>Feeling: </p>
+                    <p>Understanding: </p>
+                    <p>Support: </p>
+                    <p>Comments: </p>
                     <button type='submit'>Submit Feedback</button>
                 </form>
 
