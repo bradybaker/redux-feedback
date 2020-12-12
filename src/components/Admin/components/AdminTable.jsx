@@ -7,6 +7,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const CustomTableCell = withStyles(theme => ({
     head: {
@@ -21,12 +23,13 @@ const CustomTableCell = withStyles(theme => ({
 
 const styles = theme => ({
     root: {
-        width: '100%',
         marginTop: theme.spacing.unit * 3,
         overflowX: 'auto',
+        padding: '4em',
+        borderRadius: 10
     },
     table: {
-        minWidth: 700,
+        minWidth: 600,
     },
     row: {
         '&:nth-of-type(odd)': {
@@ -36,6 +39,10 @@ const styles = theme => ({
 });
 
 class AdminTable extends Component {
+
+    handleDelete = () => {
+        console.log('Clicking Delete')
+    }
 
     render() {
         const classes = this.props.classes
@@ -50,6 +57,7 @@ class AdminTable extends Component {
                                 <CustomTableCell align="center">Understanding</CustomTableCell>
                                 <CustomTableCell align="center">Support</CustomTableCell>
                                 <CustomTableCell align="center">Comment</CustomTableCell>
+                                <CustomTableCell align="center">Delete</CustomTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -62,6 +70,11 @@ class AdminTable extends Component {
                                     <CustomTableCell align="center">{item.understanding}</CustomTableCell>
                                     <CustomTableCell align="center">{item.support}</CustomTableCell>
                                     <CustomTableCell align="center">{item.comments}</CustomTableCell>
+                                    <CustomTableCell align="center">
+                                        <IconButton className={classes.button} aria-label="Delete" onClick={this.handleDelete} >
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </CustomTableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
