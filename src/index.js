@@ -52,13 +52,21 @@ const commentReducer = (state = {}, action) => {
     return state
 }
 
+const responseReducer = (state = [], action) => {
+    if (action.type === 'GET_RESPONSES') {
+        return action.payload
+    }
+    return state
+}
+
 const storeInstance = createStore(
     combineReducers({
         nameReducer,
         feelingReducer,
         understandingReducer,
         supportReducer,
-        commentReducer
+        commentReducer,
+        responseReducer
     }),
     applyMiddleware(logger)
 )
