@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
 
 const styles = theme => ({
     formControl: {
@@ -24,6 +25,7 @@ class Feeling extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.dispatch({ type: 'FEELING', payload: this.state })
         this.props.history.push('/understanding')
     }
 
@@ -64,4 +66,4 @@ class Feeling extends Component {
     }
 }
 
-export default withRouter(withStyles(styles)(Feeling));
+export default withRouter(withStyles(styles)(connect()(Feeling)));

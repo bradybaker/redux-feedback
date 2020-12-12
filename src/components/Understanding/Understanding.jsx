@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux'
 
 const styles = theme => ({
     formControl: {
@@ -24,6 +25,7 @@ class Understanding extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.dispatch({ type: 'UNDERSTANDING', payload: this.state })
         this.props.history.push('/supported')
     }
 
@@ -68,4 +70,4 @@ class Understanding extends Component {
     }
 }
 
-export default withRouter(withStyles(styles)(Understanding));
+export default withRouter(withStyles(styles)(connect()(Understanding)));
