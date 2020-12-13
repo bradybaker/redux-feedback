@@ -8,6 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 import '../App/App.css'
+import Fab from '@material-ui/core/Fab';
 
 
 const styles = theme => ({
@@ -19,8 +20,9 @@ const styles = theme => ({
     },
     group: {
         margin: `${theme.spacing.unit}px 0`,
-
-
+    },
+    fab: {
+        margin: theme.spacing.unit,
     },
 });
 
@@ -69,9 +71,9 @@ class Supported extends Component {
                             <FormControlLabel value="5" control={<Radio required />} label="5" />
                         </RadioGroup>
                     </FormControl>
-                    <button type='submit'>Next</button>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
                 </form>
-                <button onClick={this.goBack}>Back</button>
+                <Fab variant='extended' className={classes.fab} onClick={this.goBack}>Back</Fab>
             </div>
         )
     }

@@ -3,6 +3,14 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../App/App.css'
+import Fab from '@material-ui/core/Fab';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    fab: {
+        margin: theme.spacing.unit,
+    },
+});
 
 class Review extends Component {
 
@@ -29,6 +37,7 @@ class Review extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         const { nameReducer, feelingReducer, understandingReducer, supportReducer, commentReducer } = this.props
         return (
             <div className='questionCard'>
@@ -39,7 +48,7 @@ class Review extends Component {
                     <p>Understanding: {understandingReducer.understanding}</p>
                     <p>Support: {supportReducer.support}</p>
                     <p>Comments: {commentReducer.comments}</p>
-                    <button type='submit'>Submit Feedback</button>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Submit Feedback</Fab>
                 </form>
 
             </div>
@@ -55,4 +64,4 @@ const mapStateToProps = (reduxState) => ({
     commentReducer: reduxState.commentReducer
 });
 
-export default withRouter(connect(mapStateToProps)(Review));
+export default withRouter(withStyles(styles)(connect(mapStateToProps)(Review)));

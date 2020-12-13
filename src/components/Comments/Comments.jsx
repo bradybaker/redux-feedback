@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 import '../App/App.css'
+import Fab from '@material-ui/core/Fab';
 
 const styles = theme => ({
     textField: {
@@ -12,6 +13,9 @@ const styles = theme => ({
         display: 'grid',
         flexWrap: 'wrap',
         justifyContent: 'center'
+    },
+    fab: {
+        margin: theme.spacing.unit,
     },
 });
 
@@ -54,9 +58,9 @@ class Comments extends Component {
                         margin="normal"
                         variant="filled"
                     />
-                    <button type='submit'>Next</button>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
                 </form>
-                <button onClick={this.goBack}>Back</button>
+                <Fab variant='extended' className={classes.fab} onClick={this.goBack}>Back</Fab>
             </div>
         )
     }

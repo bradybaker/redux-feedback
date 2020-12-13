@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
 import { connect } from 'react-redux'
 import '../App/App.css'
 
@@ -12,6 +13,9 @@ const styles = theme => ({
         display: 'grid',
         flexWrap: 'wrap',
         justifyContent: 'center'
+    },
+    fab: {
+        margin: theme.spacing.unit,
     },
 });
 
@@ -51,7 +55,7 @@ class Home extends Component {
                         margin="normal"
                         variant="outlined"
                     />
-                    <button type='submit'>Next</button>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
                 </form>
             </div>
         )

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import AdminTable from './components/AdminTable'
+import '../App/App.css'
 
 class Admin extends Component {
 
@@ -23,8 +24,8 @@ class Admin extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Admin Page</h1>
+            <div className='tableCard'>
+                <h1>Feedback Results</h1>
                 <AdminTable />
             </div>
         )

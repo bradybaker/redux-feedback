@@ -39,3 +39,16 @@
   justify-items: baseline;
   margin-left: -5em;
 }
+
+.tableCard {
+  background-color: white;
+  margin-top: 2em;
+  margin-left: 30em;
+  margin-right: 30em;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 
+       inset 0 -3em 3em rgba(0,0,0,0.1), 
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}

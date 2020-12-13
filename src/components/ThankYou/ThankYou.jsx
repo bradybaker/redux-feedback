@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import '../App/App.css'
+import Fab from '@material-ui/core/Fab';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    fab: {
+        margin: theme.spacing.unit,
+    },
+});
+
 
 class ThankYou extends Component {
 
@@ -11,13 +20,15 @@ class ThankYou extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <div className='questionCard'>
-                <h1>Thank you so much for feedback! Your responses have been submitted.</h1>
-                <button onClick={this.handleClick}>Leave New Feedback</button>
+                <h1>Thank you so much for feedback!</h1>
+                <h1> Your responses have been submitted.</h1>
+                <Fab variant='extended' className={classes.fab} onClick={this.handleClick}>Leave New Feedback</Fab>
             </div>
         )
     }
 }
 
-export default withRouter(connect()(ThankYou));
+export default withRouter(withStyles(styles)(connect()(ThankYou)));
