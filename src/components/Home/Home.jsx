@@ -3,17 +3,15 @@ import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
+import '../App/App.css'
 
 const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-    },
-    dense: {
-        marginTop: 16,
-    },
-    menu: {
-        width: 200,
+        display: 'grid',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
     },
 });
 
@@ -39,15 +37,14 @@ class Home extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div>
-                {JSON.stringify(this.state)}
-                <h1>Home</h1>
-                <h2>We appreciate you taking some time to give us your feedback! Let's start with your name!</h2>
+            <div className='questionCard'>
+                <h1>Prime Academy Daily Survey</h1>
+                <h2>We appreciate you taking some time to give us your feedback!</h2>
+                <h3>Let's start with your name!</h3>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         required
-                        id="outlined-name"
-                        label="Name"
+                        id="Name"
                         className={classes.textField}
                         value={this.state.name}
                         onChange={this.handleChange}
