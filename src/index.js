@@ -12,7 +12,7 @@ const nameReducer = (state = {}, action) => {
         return action.payload
     } else if (action.type === 'CLEAR') {
         return state = {}
-    }
+    } //end if
     return state
 }
 
@@ -21,7 +21,7 @@ const feelingReducer = (state = {}, action) => {
         return action.payload
     } else if (action.type === 'CLEAR') {
         return state = {}
-    }
+    } //end if
     return state
 }
 
@@ -30,7 +30,7 @@ const understandingReducer = (state = {}, action) => {
         return action.payload
     } else if (action.type === 'CLEAR') {
         return state = {}
-    }
+    }//end if
     return state
 }
 
@@ -39,7 +39,7 @@ const supportReducer = (state = {}, action) => {
         return action.payload
     } else if (action.type === 'CLEAR') {
         return state = {}
-    }
+    }//end if
     return state
 }
 
@@ -48,14 +48,14 @@ const commentReducer = (state = {}, action) => {
         return action.payload
     } else if (action.type === 'CLEAR') {
         return state = {}
-    }
+    }//end if
     return state
 }
 
 const responseReducer = (state = [], action) => {
     if (action.type === 'GET_RESPONSES') {
         return action.payload
-    }
+    }//end if
     return state
 }
 

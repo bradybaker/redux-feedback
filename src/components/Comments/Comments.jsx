@@ -65,6 +65,7 @@ class Comments extends Component {
                     <Fab variant='extended' className={classes.fab} type='submit'>Next <ArrowForwardIcon /></Fab>
                 </form>
                 <Fab variant='extended' className={classes.fab} onClick={this.goBack}><ArrowBackIcon /> Back</Fab>
+                <h4>4 of 4</h4>
             </div>
         )
     }

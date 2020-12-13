@@ -59,14 +59,14 @@ class AdminTable extends Component {
                     'Response Deleted',
                     'success',
                     false
-                )
-                axios.delete(`/api/response/${id}`)
+                ) // end Swal IF
+                axios.delete(`/api/response/${id}`) // ------ DELETING from DB
                     .then(response => {
                         this.props.getResponses()
                     })
                     .catch(err => {
                         console.log('Error in DELETE on client', err)
-                    })
+                    }) // end delete
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire(
                     'Cancelled',
@@ -74,11 +74,9 @@ class AdminTable extends Component {
                     'error',
                     false
                 )
-            }
-        })
+            } //end else if
+        }) // end Swal .then
     }
-
-    // TODO MAKE AXIOS DELETE ON CLIENT AND ROUTER
 
     render() {
         const classes = this.props.classes

@@ -29,7 +29,7 @@ class Review extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/response', this.state.response)
+        axios.post('/api/response', this.state.response) // ------ POSTING Responses to DB
             .then(response => {
                 console.log('Back from client post', response)
             })

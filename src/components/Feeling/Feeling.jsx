@@ -55,6 +55,7 @@ class Feeling extends Component {
         return (
             <div className='questionCard'>
                 <h1>How are you feeling today?</h1>
+
                 <form onSubmit={this.handleSubmit}>
                     <FormControl component="fieldset" className={classes.formControl}>
                         <FormLabel component="legend"></FormLabel>
@@ -75,6 +76,7 @@ class Feeling extends Component {
                     <Fab variant='extended' className={classes.fab} type='submit'>Next <ArrowForwardIcon /></Fab>
                 </form>
                 <Fab variant='extended' className={classes.fab} onClick={this.goBack}><ArrowBackIcon /> Back</Fab>
+                <h4>1 of 4</h4>
             </div>
         )
     }
