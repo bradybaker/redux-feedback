@@ -10,6 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Swal from 'sweetalert2'
 
 const CustomTableCell = withStyles(theme => ({
     head: {
@@ -43,13 +44,38 @@ class AdminTable extends Component {
 
     handleDelete = (event, id) => {
         console.log('Clicking Delete')
-        axios.delete(`/api/response/${id}`)
-            .then(response => {
-                this.props.getResponses()
-            })
-            .catch(err => {
-                console.log('Error in DELETE on client', err)
-            })
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'This response will be gone forever',
+            icon: 'warning',
+            heightAuto: false,
+            showCancelButton: true,
+            confirmButtonText: 'Yes!',
+            cancelButtonText: 'No, keep it'
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire(
+                    'Deleted!',
+                    'Response Deleted',
+                    'success',
+                    false
+                )
+                axios.delete(`/api/response/${id}`)
+                    .then(response => {
+                        this.props.getResponses()
+                    })
+                    .catch(err => {
+                        console.log('Error in DELETE on client', err)
+                    })
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire(
+                    'Cancelled',
+                    'Response not deleted',
+                    'error',
+                    false
+                )
+            }
+        })
     }
 
     // TODO MAKE AXIOS DELETE ON CLIENT AND ROUTER
