@@ -3,17 +3,15 @@ import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
+import '../App/App.css'
 
 const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-    },
-    dense: {
-        marginTop: 16,
-    },
-    menu: {
-        width: 200,
+        display: 'grid',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
     },
 });
 
@@ -43,20 +41,17 @@ class Comments extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div>
-                {JSON.stringify(this.state)}
+            <div className='questionCard'>
                 <h1>Comments</h1>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         id="comments"
-                        label="Comments"
                         multiline
                         rowsMax="4"
                         value={this.state.comments}
                         onChange={this.handleChange}
                         className={classes.textField}
                         margin="normal"
-                        helperText="Comments"
                         variant="filled"
                     />
                     <button type='submit'>Next</button>

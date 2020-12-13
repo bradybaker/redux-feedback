@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import '../App/App.css'
 
 class ThankYou extends Component {
 
@@ -11,7 +12,7 @@ class ThankYou extends Component {
 
     render() {
         return (
-            <div>
+            <div className='questionCard'>
                 <h1>Thank you so much for feedback! Your responses have been submitted.</h1>
                 <button onClick={this.handleClick}>Leave New Feedback</button>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import '../App/App.css'
 
 class Review extends Component {
 
@@ -20,15 +21,6 @@ class Review extends Component {
         axios.post('/api/response', this.state.response)
             .then(response => {
                 console.log('Back from client post', response)
-                // this.setState({
-                //     response: {
-                //         name: '',
-                //         feeling: null,
-                //         understanding: null,
-                //         support: null,
-                //         comments: ''
-                //     }
-                // })
             })
             .catch(err => {
                 console.log('Error in Review POST', err)
@@ -39,10 +31,9 @@ class Review extends Component {
     render() {
         const { nameReducer, feelingReducer, understandingReducer, supportReducer, commentReducer } = this.props
         return (
-            <div>
-                {JSON.stringify(this.state.response)}
+            <div className='questionCard'>
                 <h1>Review Responses</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='responseCard'>
                     <p>Name: {nameReducer.name}</p>
                     <p>Feeling: {feelingReducer.feeling}  </p>
                     <p>Understanding: {understandingReducer.understanding}</p>

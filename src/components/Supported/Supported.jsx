@@ -7,11 +7,15 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
+import '../App/App.css'
 
 
 const styles = theme => ({
     formControl: {
         margin: theme.spacing.unit * 3,
+        display: 'grid',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
     },
     group: {
         margin: `${theme.spacing.unit}px 0`,
@@ -45,8 +49,7 @@ class Supported extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div>
-                {JSON.stringify(this.state)}
+            <div className='questionCard'>
                 <h1>Supported</h1>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl component="fieldset" className={classes.formControl}>
