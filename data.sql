@@ -14,7 +14,7 @@ CREATE TABLE "feedback" (
   "date" date not null default CURRENT_DATE
 ); 
 
-SELECT * FROM "feedback" ORDER BY "date"
+SELECT * FROM "feedback" ORDER BY "date" DESC;
 
 -- Sample feedback item
 INSERT INTO "feedback" ("name", "feeling", "understanding", "support", "comments")

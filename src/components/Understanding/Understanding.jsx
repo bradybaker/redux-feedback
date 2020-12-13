@@ -53,10 +53,10 @@ class Understanding extends Component {
         const { classes } = this.props;
         return (
             <div className='questionCard'>
-                <h1>Understanding</h1>
+                <h1>How well are you understanding the content?</h1>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">How well are you understanding the content?</FormLabel>
+                        <FormLabel component="legend"></FormLabel>
                         <RadioGroup
                             aria-label="understanding"
                             name="understanding"

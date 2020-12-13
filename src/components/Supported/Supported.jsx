@@ -54,10 +54,10 @@ class Supported extends Component {
         const { classes } = this.props;
         return (
             <div className='questionCard'>
-                <h1>Supported</h1>
+                <h1>How well are you being supported?</h1>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">How well are you being supported?</FormLabel>
+                        <FormLabel component="legend"></FormLabel>
                         <RadioGroup
                             required
                             aria-label="support"

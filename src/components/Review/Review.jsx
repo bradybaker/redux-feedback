@@ -5,11 +5,13 @@ import { connect } from 'react-redux'
 import '../App/App.css'
 import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 const styles = theme => ({
     fab: {
         margin: theme.spacing.unit,
+        display: 'flex'
     },
 });
 
@@ -35,6 +37,10 @@ class Review extends Component {
                 console.log('Error in Review POST', err)
             }) //end POST
         this.props.history.push('/thankyou')
+    } // end handleSubmit
+
+    goBack = () => {
+        this.props.history.push('/comments')
     }
 
     render() {
@@ -51,10 +57,10 @@ class Review extends Component {
                     <p>Comments: {commentReducer.comments}</p>
                     <Fab variant='extended' className={classes.fab} type='submit'>Submit Feedback</Fab>
                 </form>
-
+                <Fab variant='extended' className={classes.fab} onClick={this.goBack}><ArrowBackIcon /> Back</Fab>
             </div>
-        )
-    }
+        ) // end return
+    } // end render
 }
 
 const mapStateToProps = (reduxState) => ({

@@ -49,7 +49,8 @@ class Comments extends Component {
         const { classes } = this.props;
         return (
             <div className='questionCard'>
-                <h1>Comments</h1>
+                <h1>Any Comments?</h1>
+                <h4>You can leave this blank.</h4>
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         id="comments"

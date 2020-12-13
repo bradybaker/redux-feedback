@@ -54,10 +54,10 @@ class Feeling extends Component {
         const { classes } = this.props;
         return (
             <div className='questionCard'>
-                <h1>Feeling</h1>
+                <h1>How are you feeling today?</h1>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">How are you feeling today?</FormLabel>
+                        <FormLabel component="legend"></FormLabel>
                         <RadioGroup
                             aria-label="Feeling"
                             name="Feeling"
