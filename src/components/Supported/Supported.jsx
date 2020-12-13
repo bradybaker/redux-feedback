@@ -9,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 import '../App/App.css'
 import Fab from '@material-ui/core/Fab';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 const styles = theme => ({
@@ -71,9 +73,9 @@ class Supported extends Component {
                             <FormControlLabel value="5" control={<Radio required />} label="5" />
                         </RadioGroup>
                     </FormControl>
-                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next <ArrowForwardIcon /></Fab>
                 </form>
-                <Fab variant='extended' className={classes.fab} onClick={this.goBack}>Back</Fab>
+                <Fab variant='extended' className={classes.fab} onClick={this.goBack}><ArrowBackIcon /> Back</Fab>
             </div>
         )
     }

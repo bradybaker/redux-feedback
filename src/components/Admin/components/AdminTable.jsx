@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -36,13 +37,22 @@ const styles = theme => ({
             backgroundColor: theme.palette.background.default,
         },
     },
-});
+}); // end styles
 
 class AdminTable extends Component {
 
-    handleDelete = () => {
+    handleDelete = (event, id) => {
         console.log('Clicking Delete')
+        axios.delete(`/api/response/${id}`)
+            .then(response => {
+                this.props.getResponses()
+            })
+            .catch(err => {
+                console.log('Error in DELETE on client', err)
+            })
     }
+
+    // TODO MAKE AXIOS DELETE ON CLIENT AND ROUTER
 
     render() {
         const classes = this.props.classes
@@ -71,7 +81,7 @@ class AdminTable extends Component {
                                     <CustomTableCell align="center">{item.support}</CustomTableCell>
                                     <CustomTableCell align="center">{item.comments}</CustomTableCell>
                                     <CustomTableCell align="center">
-                                        <IconButton className={classes.button} aria-label="Delete" onClick={this.handleDelete} >
+                                        <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleDelete(event, item.id)} >
                                             <DeleteIcon />
                                         </IconButton>
                                     </CustomTableCell>

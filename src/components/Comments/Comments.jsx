@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux'
 import '../App/App.css'
 import Fab from '@material-ui/core/Fab';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
 
 const styles = theme => ({
     textField: {
@@ -58,9 +61,9 @@ class Comments extends Component {
                         margin="normal"
                         variant="filled"
                     />
-                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next <ArrowForwardIcon /></Fab>
                 </form>
-                <Fab variant='extended' className={classes.fab} onClick={this.goBack}>Back</Fab>
+                <Fab variant='extended' className={classes.fab} onClick={this.goBack}><ArrowBackIcon /> Back</Fab>
             </div>
         )
     }

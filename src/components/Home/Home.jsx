@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import { connect } from 'react-redux'
 import '../App/App.css'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const styles = theme => ({
     textField: {
@@ -55,7 +56,7 @@ class Home extends Component {
                         margin="normal"
                         variant="outlined"
                     />
-                    <Fab variant='extended' className={classes.fab} type='submit'>Next</Fab>
+                    <Fab variant='extended' className={classes.fab} type='submit'>Next<ArrowForwardIcon /></Fab>
                 </form>
             </div>
         )

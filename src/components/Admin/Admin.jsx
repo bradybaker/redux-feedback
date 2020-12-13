@@ -11,6 +11,8 @@ class Admin extends Component {
         this.getResponses()
     }
 
+    // --- GETTING RESPONSES FROM DATABASE
+
     getResponses = () => {
         axios.get('/api/response')
             .then(response => {
@@ -26,7 +28,7 @@ class Admin extends Component {
         return (
             <div className='tableCard'>
                 <h1>Feedback Results</h1>
-                <AdminTable />
+                <AdminTable getResponses={this.getResponses} />
             </div>
         )
     }
